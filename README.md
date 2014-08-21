@@ -29,4 +29,4 @@ The gem comes with a handy command-line tool for converting the input files into
 
     lp-build-destinations /path/to/taxonomy/file /path/to/destinations/file [output/dir]
 
-If `output/dir` is ommitted, all HTML files will be written to the current directory.
+If `output/dir` is ommitted or is not a valid directory, all HTML files will be written to the current directory.
