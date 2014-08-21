@@ -9,6 +9,10 @@ We would like you to create a batch processor that takes these input files and p
 
 The batch processor should take the location of the two input files and the output directory as parameters.
 
+## Requirements
+
+[Ruby version 2.x](https://www.ruby-lang.org/en/downloads/)
+
 ## Installation
 
     git clone git@github.com:47primes/lp-destinations.git
