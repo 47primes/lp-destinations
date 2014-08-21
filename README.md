@@ -11,7 +11,8 @@ The batch processor should take the location of the two input files and the outp
 
 ## Installation
 
-    cd /path/to/lp-destinations
+    git clone git@github.com:47primes/lp-destinations.git
+    cd lp-destinations
     gem install lp-destinations-0.0.1.gem
 
 ## Usage
