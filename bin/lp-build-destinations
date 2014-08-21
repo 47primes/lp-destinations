@@ -1,0 +1,31 @@
+#!/usr/bin/env ruby
+
+begin
+  require 'lp-destinations'
+rescue LoadError
+  require 'rubygems'
+  require 'lp-destinations'
+end
+
+require 'optparse'
+
+usage = "Usage: #{File.basename(__FILE__)} path/to/taxonomy/file path/to/Destinations/file [output/dir]"
+
+path_to_taxonomy = ARGV[0]
+path_to_destinations = ARGV[1]
+
+if path_to_taxonomy.to_s.empty?
+  puts usage
+  exit(0)
+elsif path_to_taxonomy.strip == "-h" || path_to_taxonomy.strip == "--help"
+  puts usage
+  exit(0)
+elsif path_to_taxonomy && File.exists?(path_to_taxonomy) && path_to_destinations && File.exists?(path_to_destinations)
+  output_dir = ARGV[2] && File.exists?(ARGV[2]) ? ARGV[2] : Dir.pwd
+  LP::Destinations::Processor.build_html(path_to_taxonomy, path_to_destinations, output_dir)
+  exit(0)
+else
+  puts "Invalid directory: #{path_to_taxonomy}" if !File.exists?(path_to_taxonomy)
+  puts "Invalid directory: #{path_to_destinations}" if !File.exists?(path_to_destinations)
+  exit(1)
+end

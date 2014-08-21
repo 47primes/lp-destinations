@@ -2,7 +2,7 @@ PATH
   remote: .
   specs:
     lp-destinations (0.0.1)
-      nokogiri
+      nokogiri (~> 1.4)
 
 GEM
   remote: https://rubygems.org/
@@ -26,5 +26,5 @@ PLATFORMS
 
 DEPENDENCIES
   lp-destinations!
-  rake (~> 10.0.0)
-  rspec (~> 2.11.0)
+  rake (~> 10.0)
+  rspec (~> 2.11)

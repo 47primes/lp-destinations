@@ -17,6 +17,7 @@ Gem::Specification.new do |s|
   s.files         = Dir["#{File.dirname(__FILE__)}/**/*"] + %w(README.md Rakefile lp-destinations.gemspec)
   s.test_files    = Dir.glob("spec/*.rb")
   s.rdoc_options  = ['--line-numbers', '--inline-source', '--title', 'lp-destinations', '--main', 'README.md']
+  s.executables   = ['lp-build-destinations']
 
   s.add_dependency 'nokogiri', '~> 1.4'
 

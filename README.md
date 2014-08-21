@@ -9,25 +9,23 @@ We would like you to create a batch processor that takes these input files and p
 
 The batch processor should take the location of the two input files and the output directory as parameters.
 
-These sample input files contain only a small subset of destinations.  We will test your software on the full Lonely Planet dataset, which currently consists of almost 30,000 destinations.
+## Installation
 
-To submit your code, either ZIP it up and email it to the address below, or give us a link to your github repo.
+    cd /path/to/lp-destinations
+    gem install lp-destinations-0.0.1.gem
 
-When we receive your project the code will be:
-  1. Built and run against the dataset supplied.
-  2. Evaluated based on coding style and design choices in all of these areas: 
-      - Readability.
-      - Simplicity.
-      - Extensibility.
-      - Reliability.
-      - Performance.
+## Usage
 
-Feedback at this stage will be provided to all candidates if requested.
+### In Code
 
-If the code evaluation goes well we will invite you in to implement some new requirements within your original project. You can choose to bring in your own laptop with your development environment loaded if you are more comfortable with that, or we can provide you with an iMac and Sublime Text 2. 
+    require 'lp-destinations'
 
-## Setup
+    LP::Destinations::Processor.build_html(path_to_taxonomy, path_to_destinations, output_dir)
 
+### On The Command Line
 
+The gem comes with a handy command-line tool for converting the input files into HTML files.
 
-## Example App
+    lp-build-destinations /path/to/taxonomy/file /path/to/destinations/file [output/dir]
+
+If `output/dir` is ommitted, all HTML files will be written to the current directory.
